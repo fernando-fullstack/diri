@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Fernando's Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #6b6b6b, #1e1e1e);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .login-image {
+            background: url('https://source.unsplash.com/random/800x600?technology') center/cover;
+            min-height: 300px;
+        }
+        .form-floating input:focus {
+            border-color: #0dcaf0;
+            box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+        }
+        .btn-login {
+            background: linear-gradient(45deg, #0dcaf0, #0d6efd);
+            border: none;
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4);
+        }
+        .social-login {
+            border-top: 1px solid #dee2e6;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="login-container">
+                    <div class="row g-0">
+                        <div class="col-lg-6 login-image d-none d-lg-block"></div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center mb-4">
+                                    <h1 class="h4 text-dark mb-4">Welcome Back!</h1>
+                                </div>
+                                <form id="loginForm" class="needs-validation" novalidate>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                        <label for="username">Username</label>
+                                        <div class="invalid-feedback">
+                                            Please enter your username.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                        <label for="password">Password</label>
+                                        <div class="invalid-feedback">
+                                            Please enter your password.
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <a href="#" class="text-info small">Forgot Password?</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-login text-white w-100 mb-3">
+                                        Sign In
+                                    </button>
+                                    <div class="text-center">
+                                        <span class="small">Don't have an account? </span>
+                                        <a href="#" class="text-info small">Create one!</a>
+                                    </div>
+                                    <div class="social-login text-center">
+                                        <p class="small text-muted mb-3">Or sign in with</p>
+                                        <a href="#" class="social-btn bg-primary text-white"><i class="bi bi-facebook"></i></a>
+                                        <a href="#" class="social-btn bg-danger text-white"><i class="bi bi-google"></i></a>
+                                        <a href="#" class="social-btn bg-info text-white"><i class="bi bi-twitter"></i></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    
+    <script>
+        // Form validation
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>
